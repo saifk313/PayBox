@@ -1,0 +1,4 @@
+com\payBox\pageObjects\LoginPage.class
+com\payBox\testCases\BaseClass.class
+com\payBox\pageObjects\HomePage.class
+com\payBox\testCases\TC_LoginTest.class
