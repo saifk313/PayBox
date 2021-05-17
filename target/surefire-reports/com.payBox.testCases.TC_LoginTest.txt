@@ -1,4 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: com.payBox.testCases.TC_LoginTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.274 sec
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 62.775 sec <<< FAILURE!
+loginTest(com.payBox.testCases.TC_LoginTest)  Time elapsed: 4.428 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+
+loginTest(com.payBox.testCases.TC_LoginTest)  Time elapsed: 2.828 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+
+loginTest(com.payBox.testCases.TC_LoginTest)  Time elapsed: 3.033 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+

@@ -6,7 +6,7 @@
       <class name="com.payBox.testCases.TC_LoginTest">
         <methods>
           <include name="setUp"/>
-          <include name="loginTest" invocation-numbers="0"/>
+          <include name="loginTest" invocation-numbers="1 2 3"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.payBox.testCases.TC_LoginTest -->

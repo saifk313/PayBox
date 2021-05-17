@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest">
-              <span class="suite-name border-passed">com.payBox.testCases.TC_LoginTest</span>
+              <span class="suite-name border-failed">com.payBox.testCases.TC_LoginTest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods, 3 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-com.payBox.testCases.TC_LoginTest" class="hide-methods failed suite-com.payBox.testCases.TC_LoginTest"> (hide)</a> <!-- hide-methods failed suite-com.payBox.testCases.TC_LoginTest -->
+                      <a href="#" panel-name="suite-com.payBox.testCases.TC_LoginTest" class="show-methods failed suite-com.payBox.testCases.TC_LoginTest"> (show)</a> <!-- show-methods failed suite-com.payBox.testCases.TC_LoginTest -->
+                    </span>
+                    <div class="method-list-content failed suite-com.payBox.testCases.TC_LoginTest">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest" title="com.payBox.testCases.TC_LoginTest" hash-for-method="loginTest(saif, 123)">loginTest(saif, 123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest" title="com.payBox.testCases.TC_LoginTest" hash-for-method="loginTest(saifzane2@gmail.com, 123)">loginTest(saifzane2@gmail.com, 123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest" title="com.payBox.testCases.TC_LoginTest" hash-for-method="loginTest(saif, Boxer@123)">loginTest(saif, Boxer@123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-com.payBox.testCases.TC_LoginTest -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +124,11 @@
                       <a href="#" panel-name="suite-com.payBox.testCases.TC_LoginTest" class="show-methods passed suite-com.payBox.testCases.TC_LoginTest"> (show)</a> <!-- show-methods passed suite-com.payBox.testCases.TC_LoginTest -->
                     </span>
                     <div class="method-list-content passed suite-com.payBox.testCases.TC_LoginTest">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest" title="com.payBox.testCases.TC_LoginTest" hash-for-method="loginTest(saifzane2@gmail.com, Boxer@123)">loginTest(saifzane2@gmail.com, Boxer@123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-com.payBox.testCases.TC_LoginTest" title="com.payBox.testCases.TC_LoginTest" hash-for-method="loginTest(saifzane2@gmail.com, Boxer@123)">loginTest(saifzane2@gmail.com, Boxer@123)</a> <!-- method navigator-link -->
@@ -117,12 +146,64 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-com.payBox.testCases.TC_LoginTest" class="panel com.payBox.testCases.TC_LoginTest">
+          <div class="suite-com.payBox.testCases.TC_LoginTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.payBox.testCases.TC_LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(saif, 123)">
+                  </a> <!-- loginTest(saif, 123) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(saif, 123)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+... Removed 38 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(saifzane2@gmail.com, 123)">
+                  </a> <!-- loginTest(saifzane2@gmail.com, 123) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(saifzane2@gmail.com, 123)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+... Removed 38 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(saif, Boxer@123)">
+                  </a> <!-- loginTest(saif, Boxer@123) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(saif, Boxer@123)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.payBox.testCases.TC_LoginTest.loginTest(TC_LoginTest.java:32)
+... Removed 38 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-com.payBox.testCases.TC_LoginTest-class-failed -->
           <div class="suite-com.payBox.testCases.TC_LoginTest-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.payBox.testCases.TC_LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(saifzane2@gmail.com, Boxer@123)">
+                  </a> <!-- loginTest(saifzane2@gmail.com, Boxer@123) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(saifzane2@gmail.com, Boxer@123)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="loginTest(saifzane2@gmail.com, Boxer@123)">
@@ -184,16 +265,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'com.payBox.testCases.TC_LoginTest')
-data.setCell(0, 3, 14139);
+data.setCell(0, 3, 26749);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'com.payBox.testCases.TC_LoginTest')
+data.setCell(1, 3, 12470);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'loginTest')
+data.setCell(2, 2, 'com.payBox.testCases.TC_LoginTest')
+data.setCell(2, 3, 4420);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'loginTest')
+data.setCell(3, 2, 'com.payBox.testCases.TC_LoginTest')
+data.setCell(3, 3, 3032);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'loginTest')
+data.setCell(4, 2, 'com.payBox.testCases.TC_LoginTest')
+data.setCell(4, 3, 2828);
 window.suiteTableData['com.payBox.testCases.TC_LoginTest']= { tableData: data, tableDiv: 'times-div-com.payBox.testCases.TC_LoginTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
               <div id="times-div-com.payBox.testCases.TC_LoginTest">
               </div> <!-- times-div-com.payBox.testCases.TC_LoginTest -->
             </div> <!-- times-div -->
@@ -226,11 +323,33 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">loginTest(saifzane2@gmail.com, Boxer@123)</span>
-                <span class="method-start">31528 ms</span>
+                <span class="method-start">10433 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginTest(saif, Boxer@123)</span>
+                <span class="method-start">37185 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginTest(saifzane2@gmail.com, 123)</span>
+                <span class="method-start">41619 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginTest(saif, 123)</span>
+                <span class="method-start">44449 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginTest(saifzane2@gmail.com, Boxer@123)</span>
+                <span class="method-start">47484 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">45697 ms</span>
+                <span class="method-start">60034 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

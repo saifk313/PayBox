@@ -20,8 +20,21 @@ WebDriver ldriver;
 	@FindBy(css="div.UnifiedNewDropdownMenuToggleButton-label>span")
 	WebElement btnNew;
 	
+	@FindBy(css="span.avatar-initials ")
+	WebElement imgAvatar;
+	
+	@FindBy(xpath="//*[@id=\"menu17\"]/li[11]/a/span")
+	WebElement btnLogout;
+	
 	public String getLabelMessage() {
 		return lblHelloMsg.getText();
 	}
-
+	
+	public void clickAvatar() {
+		imgAvatar.click();
+	}
+	
+	public void clickLogout() {
+		btnLogout.click();
+	}
 }
