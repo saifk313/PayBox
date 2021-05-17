@@ -1,25 +1,30 @@
 package com.payBox.testCases;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+import java.io.IOException;
+
 import org.testng.Assert;
 
 import com.payBox.pageObjects.HomePage;
 import com.payBox.pageObjects.LoginPage;
+import com.payBox.utilities.XLUtils;
 
 public class TC_LoginTest extends BaseClass {
 	LoginPage loginPage;
 	HomePage homePage;
 	
-	@Test
-	public void loginTest() throws InterruptedException {
+	@Test(dataProvider="LoginData")
+	public void loginTest(String emailid, String pwd) throws InterruptedException {
 		
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
 		String lblMessage;
 		
-		loginPage.setEmailAddress(emailAddress);
+		loginPage.setEmailAddress(emailid);
 		loginPage.clickNext();
-		loginPage.setPassword(password);
+		loginPage.setPassword(pwd);
 		loginPage.clickSubmit();
 		
 		lblMessage = homePage.getLabelMessage();
@@ -32,5 +37,22 @@ public class TC_LoginTest extends BaseClass {
 			System.out.println("failure");
 		}
 	}
-
+	
+	@DataProvider(name="LoginData")
+	String[][] getLoginData() throws IOException {
+		String path = System.getProperty("user.dir") + "/src/test/java/com/payBox/testData/BoxData.xlsx";
+		
+		int rowCount = XLUtils.getRowCount(path, "Sheet1");
+		int colCount = XLUtils.getCellCount(path, "Sheet1", 1);
+		
+		String[][] loginData = new String[rowCount][colCount];
+		
+		for (int i = 1; i <= rowCount; i++) {
+			for (int j = 0; j < colCount; j++) {
+				loginData[i - 1][j] = XLUtils.getCellData(path, "Sheet1", i, j);
+			}
+		}
+		
+		return loginData;
+	}
 }
