@@ -17,6 +17,9 @@ WebDriver ldriver;
 	@FindBy(css="div.InlineUpgradeButtonWithModal>button>span>span")
 	WebElement lblHelloMsg;
 	
+	@FindBy(css="div.UnifiedNewDropdownMenuToggleButton-label>span")
+	WebElement btnNew;
+	
 	public String getLabelMessage() {
 		return lblHelloMsg.getText();
 	}
