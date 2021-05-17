@@ -1,7 +1,7 @@
 package com.payBox.testCases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 import com.payBox.pageObjects.HomePage;
 import com.payBox.pageObjects.LoginPage;
@@ -12,7 +12,7 @@ public class TC_LoginTest extends BaseClass {
 	
 	@Test
 	public void loginTest() throws InterruptedException {
-		driver.get(baseUrl);
+		
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
 		String lblMessage;

@@ -36,4 +36,9 @@ public class ReadConfig {
 		String pwd = prop.getProperty("password");
 		return pwd;
 	}
+	
+	public String getBrowserName() {
+		String browserName = prop.getProperty("browser");
+		return browserName;
+	}
 }

@@ -2,8 +2,10 @@ package com.payBox.testCases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import com.payBox.utilities.ReadConfig;
 
@@ -16,12 +18,20 @@ public class BaseClass {
 	public String baseUrl = readConfig.getApplicationURL();
 	public String emailAddress = readConfig.getEmailAddress();
 	public String password = readConfig.getPassword();
+	public String browser = readConfig.getBrowserName();
 	public static WebDriver driver;
 	
 	@BeforeClass
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		if(browser.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+		else if(browser.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
+		driver.get(baseUrl);
 	}
 	
 	@AfterClass
