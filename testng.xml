@@ -4,7 +4,8 @@
   <test thread-count="5" name="Box Test Cases">
   	<parameter name = "browser" value = "chrome" />
     <classes>
-      <class name="com.payBox.testCases.TC_LoginTest"/>
+      <!-- <class name="com.payBox.testCases.TC_LoginTest"/> -->
+      <class name="com.payBox.testCases.TC_HomeTest"/>
     </classes>
   </test> <!-- Test -->
-</suite> <!-- Suite -->
+</suite> <!-- Suite -->   

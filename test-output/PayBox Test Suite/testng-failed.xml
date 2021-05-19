@@ -4,13 +4,13 @@
   <test thread-count="5" name="Box Test Cases(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.payBox.testCases.TC_LoginTest">
+      <class name="com.payBox.testCases.TC_HomeTest">
         <methods>
           <include name="setUp"/>
-          <include name="loginTest" invocation-numbers="0 1 2 3 4"/>
           <include name="tearDown"/>
+          <include name="addNewFolder"/>
         </methods>
-      </class> <!-- com.payBox.testCases.TC_LoginTest -->
+      </class> <!-- com.payBox.testCases.TC_HomeTest -->
     </classes>
   </test> <!-- Box Test Cases(failed) -->
 </suite> <!-- Failed suite [PayBox Test Suite] -->

@@ -4,13 +4,18 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
-public class XLUtils {
+import com.payBox.testCases.BaseClass;
+
+public class TestUtils extends BaseClass {
 	
 	public static FileInputStream fi;
 	public static FileOutputStream fo;
@@ -24,7 +29,6 @@ public class XLUtils {
 		wb = new XSSFWorkbook(fi);
 		sheet = wb.getSheet(xlSheet);
 		int rowCount = sheet.getLastRowNum();
-//		wb.close();
 		fi.close();
 		return rowCount;
 	}
@@ -35,7 +39,6 @@ public class XLUtils {
 		sheet = wb.getSheet(xlSheet);
 		row = sheet.getRow(rowNum);
 		int cellCount = row.getLastCellNum();
-//		wb.close();
 		fi.close();
 		return cellCount;
 	}
@@ -54,9 +57,7 @@ public class XLUtils {
 		}
 		catch(Exception e) {
 			data = "";
-		}
-		
-//		wb.close();
+		}		
 		fi.close();
 		return data;
 	}
@@ -70,8 +71,17 @@ public class XLUtils {
 		cell.setCellValue(data);
 		fo = new FileOutputStream(xlFile);
 		wb.write(fo);
-//		wb.close();
 		fi.close();
 		fo.close();
+	}
+	
+	public static void selectDropDown(String locator, String value) { 
+		Select select = new Select(driver.findElement(By.cssSelector(locator)));
+		select.selectByVisibleText(value);
+	}
+	
+	public static String randomString() {
+		String random = RandomStringUtils.randomAlphabetic(7);
+		return random;
 	}
 }
