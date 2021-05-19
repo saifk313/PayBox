@@ -25,8 +25,6 @@ public class TC_LoginTest extends BaseClass {
 		loginPage.setPassword(password);
 		loginPage.clickSubmit();
 		
-//		By helloMsgLocator = By.xpath("//span[contains(text(),'Hello, Saif Kazi!')]");
-//		TestUtils.waitForElement(driver, helloMsgLocator, 5000);
 		Thread.sleep(3000);
 		helloMsg = homePage.helloMsgExists();
 		if(helloMsg) {

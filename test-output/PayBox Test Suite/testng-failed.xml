@@ -5,13 +5,13 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="folder_name" value="Joker"/>
     <classes>
-      <class name="com.payBox.testCases.TC_HomeTest">
+      <class name="com.payBox.testCases.TC_LoginTest_DDT">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="addNewFolder" invocation-numbers="0"/>
+          <include name="loginTest" invocation-numbers="1 2 3"/>
         </methods>
-      </class> <!-- com.payBox.testCases.TC_HomeTest -->
+      </class> <!-- com.payBox.testCases.TC_LoginTest_DDT -->
     </classes>
   </test> <!-- Box Test Cases(failed) -->
 </suite> <!-- Failed suite [PayBox Test Suite] -->

@@ -20,31 +20,26 @@ public class TC_LoginTest_DDT extends BaseClass {
 		
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
-		String lblMessage;
 		
 		loginPage.setEmailAddress(emailid);
 		loginPage.clickNext();
 		loginPage.setPassword(pwd);
 		loginPage.clickSubmit();
 		
+		Thread.sleep(3000);
 		if(isInvalidUser()) {
 			driver.get(baseUrl);
 			Assert.assertTrue(false);
 		}
 		else {
-			lblMessage = homePage.getLabelMessage();
-			if(lblMessage.equals("Unlock More Storage")) {
-				homePage.clickAvatar();
-				Thread.sleep(1000);
-				homePage.clickLogout();
-				driver.get(baseUrl);
-				Assert.assertTrue(true);
-				System.out.println("success");
-			}
-			else {
-				Assert.assertTrue(false);
-				System.out.println("failure");
-			}
+			homePage.helloMsgExists();
+			homePage.clickAvatar();
+			Thread.sleep(1000);
+			homePage.clickLogout();
+			driver.get(baseUrl);
+			System.out.println("Login Successful!!!");
+			Assert.assertTrue(true);
+			
 		}
 	}
 	

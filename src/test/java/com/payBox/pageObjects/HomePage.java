@@ -23,7 +23,7 @@ WebDriver ldriver;
 	@FindBy(css="span.avatar-initials ")
 	WebElement imgAvatar;
 	
-	@FindBy(xpath="//*[@id=\"menu17\"]/li[11]/a/span")
+	@FindBy(xpath="//span[contains(text(),'Log Out')]")
 	WebElement btnLogout;
 	
 	@FindBy(xpath="//span[contains(text(),'File Upload')]")
