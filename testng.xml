@@ -3,9 +3,11 @@
 <suite name="PayBox Test Suite">
   <test thread-count="5" name="Box Test Cases">
   	<parameter name = "browser" value = "chrome" />
+  	<parameter name="folder_name" value="Joker" />
     <classes>
-      <!-- <class name="com.payBox.testCases.TC_LoginTest"/> -->
+      <class name="com.payBox.testCases.TC_LoginTest"/> 
       <class name="com.payBox.testCases.TC_HomeTest"/>
+      <class name="com.payBox.testCases.TC_UploadTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->   

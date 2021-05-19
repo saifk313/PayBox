@@ -14,7 +14,7 @@ WebDriver ldriver;
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	@FindBy(xpath="//span[contains(text(),'Hello,')]")
+	@FindBy(xpath="//span[contains(text(),'Hello, Saif Kazi!')]")
 	WebElement lblHelloMsg;
 	
 	@FindBy(css="div.UnifiedNewDropdownMenuToggleButton-label>span")
@@ -25,6 +25,9 @@ WebDriver ldriver;
 	
 	@FindBy(xpath="//*[@id=\"menu17\"]/li[11]/a/span")
 	WebElement btnLogout;
+	
+	@FindBy(xpath="//span[contains(text(),'File Upload')]")
+	WebElement lnkFileUpload;
 	
 	@FindBy(css="div.scroll-wrap-container.style--cover li:nth-child(4)>span")
 	WebElement lnkNewFolder; 
@@ -51,6 +54,10 @@ WebDriver ldriver;
 		return lblHelloMsg.getText();
 	}
 	
+	public boolean helloMsgExists() {
+		return lblHelloMsg.isDisplayed();
+	}
+	
 	public void clickAvatar() {
 		imgAvatar.click();
 	}
@@ -65,6 +72,10 @@ WebDriver ldriver;
 	
 	public void clickNew() {
 		btnNew.click();
+	}
+	
+	public void clickFileUpload() {
+		lnkFileUpload.click();
 	}
 	
 	public void clickLnkNewFolder() {

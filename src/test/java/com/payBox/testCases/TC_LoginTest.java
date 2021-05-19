@@ -1,7 +1,6 @@
 package com.payBox.testCases;
 
 import org.testng.annotations.Test;
-
 import org.testng.Assert;
 
 import com.payBox.pageObjects.HomePage;
@@ -16,25 +15,35 @@ public class TC_LoginTest extends BaseClass {
 		
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
-		String lblMessage;
+		boolean helloMsg;
+		
+		System.out.println("**********************");
+		System.out.println("Login Test Case");
 		
 		loginPage.setEmailAddress(emailAddress);
 		loginPage.clickNext();
 		loginPage.setPassword(password);
 		loginPage.clickSubmit();
 		
-		lblMessage = homePage.getLabelMessage();
-		if(lblMessage.equals("Unlock More Storage")) {
+//		By helloMsgLocator = By.xpath("//span[contains(text(),'Hello, Saif Kazi!')]");
+//		TestUtils.waitForElement(driver, helloMsgLocator, 5000);
+		Thread.sleep(3000);
+		helloMsg = homePage.helloMsgExists();
+		if(helloMsg) {
+			homePage.clickLblHelloMsg();
 			homePage.clickAvatar();
 			Thread.sleep(1000);
 			homePage.clickLogout();
 			driver.get(baseUrl);
 			Assert.assertTrue(true);
-			System.out.println("success");
+			System.out.println("\n Login Successful!!! \n");
 		}
 		else {
 			Assert.assertTrue(false);
-			System.out.println("failure");
+			System.out.println("Login Invalid..");
 		}
+		
+		System.out.println("End of Login Test Case");
+		System.out.println("**********************");
 	}
 }

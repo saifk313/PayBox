@@ -48,4 +48,11 @@ public class LoginPage {
 	public boolean checkErrorMessage() {
 		return lblErrorMessage.isDisplayed();
 	}
+	
+	public void loginSteps(String email, String pwd) {
+		setEmailAddress(email);
+		clickNext();
+		setPassword(pwd);
+		clickSubmit();
+	}
 }

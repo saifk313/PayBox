@@ -11,7 +11,11 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.payBox.testCases.BaseClass;
 
@@ -83,5 +87,11 @@ public class TestUtils extends BaseClass {
 	public static String randomString() {
 		String random = RandomStringUtils.randomAlphabetic(7);
 		return random;
+	}
+	
+	public static WebElement waitForElement(WebDriver driver, By locator, long timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		return driver.findElement(locator);
 	}
 }

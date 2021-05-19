@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [PayBox Test Suite]">
   <test thread-count="5" name="Box Test Cases(failed)">
     <parameter name="browser" value="chrome"/>
+    <parameter name="folder_name" value="Joker"/>
     <classes>
       <class name="com.payBox.testCases.TC_HomeTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="addNewFolder"/>
+          <include name="addNewFolder" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.payBox.testCases.TC_HomeTest -->
     </classes>
