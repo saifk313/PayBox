@@ -1,3 +1,11 @@
+/*
+ * 
+ * This test class contains a test case to validate the functionality of adding a new folder.
+ * The test case fails if the user tries to enter an already existing folder.
+ * Folder name is provided by the testng.xml file.
+ * 
+ */
+
 package com.payBox.testCases;
 
 import org.openqa.selenium.By;
@@ -8,9 +16,8 @@ import org.testng.annotations.Test;
 
 import com.payBox.pageObjects.HomePage;
 import com.payBox.pageObjects.LoginPage;
-import com.payBox.utilities.TestUtils;
 
-public class TC_HomeTest extends BaseClass {
+public class TC_AddFolderTest extends BaseClass {
 	
 	LoginPage loginPage;
 	HomePage homePage;
@@ -38,17 +45,8 @@ public class TC_HomeTest extends BaseClass {
 			}
 		}
 		catch(NoSuchElementException nse) {
-			homePage.clickNew();
-			homePage.clickLnkNewFolder();
-			Thread.sleep(2000);
-			homePage.setFolderName(folder_name);		
-			String email = TestUtils.randomString() + "@dummy.com";
-			homePage.setInviteAddPeople(email);
-			TestUtils.selectDropDown("select[name='invite-permission']", "Editor");
-			homePage.clickBtnCreate();
-			
+			homePage.createFolder(folder_name);	
 			Thread.sleep(3000);
-			
 			boolean created = driver.findElement(By.linkText(folder_name)).isDisplayed();
 			if(created) {
 				Assert.assertTrue(true);

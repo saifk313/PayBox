@@ -1,9 +1,16 @@
+/*
+ * This class contains locators and actions to be performed on them for the Home\Landing Page
+ * 
+ */
+
 package com.payBox.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.payBox.utilities.TestUtils;
 
 public class HomePage {
 	
@@ -108,5 +115,16 @@ WebDriver ldriver;
 	
 	public boolean folderExists() {
 		return errFolderExists.isDisplayed();
+	}
+	
+	public void createFolder(String folderName) throws InterruptedException {
+		clickNew();
+		clickLnkNewFolder();
+		Thread.sleep(2000);
+		setFolderName(folderName);		
+		String email = TestUtils.randomString() + "@dummy.com";
+		setInviteAddPeople(email);
+		TestUtils.selectDropDown("select[name='invite-permission']", "Editor");
+		clickBtnCreate();
 	}
 }

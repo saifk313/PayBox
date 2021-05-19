@@ -1,3 +1,9 @@
+/*
+ * 
+ * This test class contains a test case to validate the login functionality using hard-coded values with a single pair of credentials.
+ *
+ */
+
 package com.payBox.testCases;
 
 import org.testng.annotations.Test;

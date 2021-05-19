@@ -1,3 +1,9 @@
+/*
+ * 
+ * This class reads the value from the config.properties file and is then provided to the Base class.
+ * 
+ */
+
 package com.payBox.utilities;
 
 import java.io.File;
@@ -40,5 +46,15 @@ public class ReadConfig {
 	public String getBrowserName() {
 		String browserName = prop.getProperty("browser");
 		return browserName;
+	}
+	
+	public String getPageLoadTimeout() {
+		String pageLoadTimeout = prop.getProperty("PAGE_LOAD_TIMEOUT");
+		return pageLoadTimeout;
+	}
+	
+	public String getImplicitWait() {
+		String implicitWait = prop.getProperty("IMPLICIT_WAIT");
+		return implicitWait;
 	}
 }

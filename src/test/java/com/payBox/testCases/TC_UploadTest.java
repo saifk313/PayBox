@@ -1,3 +1,14 @@
+/*
+ * 
+ * This test class contains a test case to validate the functionality of uploading a file.
+ * The test case checks if the folder exists. If yes, it uploads in it else creates a new folder and then uploads the file.
+ * Folder name is provided by the testng.xml file.
+ * 
+ * The test case uses AutoIT for executing Windows functionality for uploading files
+ * The file is provided in the base location of the project
+ * 
+ */
+
 package com.payBox.testCases;
 
 import java.io.IOException;
@@ -33,14 +44,15 @@ public class TC_UploadTest extends BaseClass {
 		loginPage.loginSteps(emailAddress, password);
 		
 		Thread.sleep(3000);
-		
+
+		//Check if the folder already exists
 		WebElement folder = driver.findElement(By.linkText(folder_name));
 		if(folder.isDisplayed()) {
 			folder.click();
 		}
 		else {
-			Assert.assertTrue(false);
-			System.out.println("Folder does not exist. Please create a folder first");
+			System.out.println("Folder does not exist. Creating the folder now");
+			homePage.createFolder(folder_name);
 		}
 		
 		Thread.sleep(2000);
@@ -58,6 +70,7 @@ public class TC_UploadTest extends BaseClass {
 		}
 		Runtime.getRuntime().exec(System.getProperty("user.dir") + "/FileUpload.exe");
 		
+		// Check the success message using explicit wait
 		By completedMsg = By.xpath("//span[contains(text(),'Completed')]");
 		WebElement completed = TestUtils.waitForElement(driver, completedMsg, 15000);
 		

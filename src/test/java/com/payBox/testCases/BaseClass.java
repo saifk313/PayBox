@@ -1,4 +1,16 @@
+/*
+ * 
+ * This is the Base class for all the test classes, which provides basic resources such as 
+ * 
+ * Application URL, Credentials, WebDriver and browser instances. These resources are fetched from the ReadConfig.java class
+ * 
+ * The browser instance is decided by the value provided by the testng.xml file.
+ * 
+ */
+
 package com.payBox.testCases;
+
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +32,8 @@ public class BaseClass {
 	public String emailAddress = readConfig.getEmailAddress();
 	public String password = readConfig.getPassword();
 	public String browser = readConfig.getBrowserName();
+	public long pageLoadTimeout = Long.parseLong(readConfig.getPageLoadTimeout());
+	public long implicitWait = Long.parseLong(readConfig.getImplicitWait());
 	public static WebDriver driver;
 	
 	@Parameters("browser")
@@ -39,7 +53,11 @@ public class BaseClass {
 		}
 		else
 			System.out.println("Invalid Browser Name");
+		
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
 		driver.get(baseUrl);
 	}
 	

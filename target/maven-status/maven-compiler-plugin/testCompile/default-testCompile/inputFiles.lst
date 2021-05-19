@@ -1,9 +1,9 @@
 D:\workspace\Box\src\test\java\com\payBox\pageObjects\LoginPage.java
 D:\workspace\Box\src\test\java\com\payBox\utilities\TestUtils.java
 D:\workspace\Box\src\test\java\com\payBox\testCases\BaseClass.java
+D:\workspace\Box\src\test\java\com\payBox\testCases\TC_AddFolderTest.java
 D:\workspace\Box\src\test\java\com\payBox\pageObjects\UploadPage.java
 D:\workspace\Box\src\test\java\com\payBox\testCases\TC_LoginTest_DDT.java
-D:\workspace\Box\src\test\java\com\payBox\testCases\TC_HomeTest.java
 D:\workspace\Box\src\test\java\com\payBox\pageObjects\HomePage.java
 D:\workspace\Box\src\test\java\com\payBox\testCases\TC_LoginTest.java
 D:\workspace\Box\src\test\java\com\payBox\testCases\TC_UploadTest.java

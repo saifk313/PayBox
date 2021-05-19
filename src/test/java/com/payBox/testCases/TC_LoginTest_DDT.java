@@ -1,3 +1,11 @@
+/*
+ * 
+ * This test class contains a Data-Driven Test Case to validate the login functionality using Apache POI.
+ * The code may break due the appearance of Captcha. 
+ * Hence, it is recommended to execute it after all the test cases are executed.
+ * 
+ */
+
 package com.payBox.testCases;
 
 import org.testng.annotations.Test;

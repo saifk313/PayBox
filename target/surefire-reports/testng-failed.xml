@@ -3,29 +3,22 @@
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [PayBox Test Suite]">
   <test thread-count="5" verbose="0" name="Box Test Cases(failed)">
     <parameter name="browser" value="chrome"/>
-    <parameter name="folder_name" value="Joker"/>
+    <parameter name="folder_name" value="Boxer"/>
     <classes>
-      <class name="com.payBox.testCases.TC_HomeTest">
+      <class name="com.payBox.testCases.TC_LoginTest_DDT">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loginTest" invocation-numbers="1 2 3 4"/>
+        </methods>
+      </class> <!-- com.payBox.testCases.TC_LoginTest_DDT -->
+      <class name="com.payBox.testCases.TC_AddFolderTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="addNewFolder" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.payBox.testCases.TC_HomeTest -->
-      <class name="com.payBox.testCases.TC_UploadTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="uploadFile" invocation-numbers="0"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.payBox.testCases.TC_UploadTest -->
-      <class name="com.payBox.testCases.TC_LoginTest_DDT">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="loginTest" invocation-numbers="0 1 2 3 4"/>
-        </methods>
-      </class> <!-- com.payBox.testCases.TC_LoginTest_DDT -->
+      </class> <!-- com.payBox.testCases.TC_AddFolderTest -->
     </classes>
   </test> <!-- Box Test Cases(failed) -->
 </suite> <!-- Failed suite [PayBox Test Suite] -->

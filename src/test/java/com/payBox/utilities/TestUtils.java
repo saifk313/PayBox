@@ -1,3 +1,13 @@
+/*
+ * 
+ * This is a test utility class which provides support to the test classes for:
+ * 1. Reading from and Writing to the excel sheets.
+ * 2. Providing methods for explicit wait for an element
+ * 3. Selecting a value from a drop down.
+ * 4. Method for generating random text.
+ * 
+ */
+
 package com.payBox.utilities;
 
 import java.io.FileInputStream;

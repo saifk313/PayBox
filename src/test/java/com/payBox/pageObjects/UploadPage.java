@@ -1,3 +1,9 @@
+/*
+ * 
+ * This class contains locators and actions to be performed on them for the Upload a File Page
+ * 
+ */
+
 package com.payBox.pageObjects;
 
 import org.openqa.selenium.WebDriver;
